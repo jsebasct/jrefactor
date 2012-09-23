@@ -35,7 +35,8 @@ public class Customer {
         int frequentRenterPoints = 0;
 
         String result = "Rental Record for " + getName() + "\n";
-        for (Rental each : rentals) {
+        for (Rental each : rentals)
+        {
             double thisAmount = 0;
 
             //determine amounts for each line
