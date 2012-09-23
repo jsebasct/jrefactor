@@ -12,7 +12,7 @@ public class Rental {
     private int daysRented;
     private Movie movie;
 
-    public Rental(int daysRented, Movie movie) {
+    public Rental(Movie movie, int daysRented) {
         this.daysRented = daysRented;
         this.movie = movie;
     }
