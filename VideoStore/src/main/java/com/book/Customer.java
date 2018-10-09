@@ -46,22 +46,11 @@ public class Customer {
     }
 
     private double getTotalAmount() {
-        double totalAmount = 0;
-        for (Rental eachRental : rentals)
-        {
-            totalAmount += eachRental.getCharge();
-        }
-        return totalAmount;
+        return rentals.stream().mapToDouble( r -> r.getCharge()).sum();
     }
 
     private int getFrequentRenterPoints() {
-        int frequentRenterPoints = 0;
-
-        for (Rental eachRental : rentals) {
-            frequentRenterPoints += eachRental.getFrequentRenterPoints();
-        }
-
-        return frequentRenterPoints;
+        return rentals.stream().mapToInt(r -> r.getFrequentRenterPoints()).sum();
     }
 
 }
