@@ -5,6 +5,7 @@
 package com.book;
 
 /**
+ *
  */
 public class Rental {
     private int daysRented;

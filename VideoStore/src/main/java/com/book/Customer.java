@@ -9,7 +9,6 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- *
  * @author jscruz
  */
 public class Customer {
@@ -30,16 +29,14 @@ public class Customer {
         return name;
     }
 
-    public String statement()
-    {
+    public String statement() {
         double totalAmount = 0;
         int frequentRenterPoints = 0;
 
         Iterator<Rental> rentalIterator = rentals.iterator();
 
         String result = "Rental Record for " + getName() + "\n";
-        while (rentalIterator.hasNext())
-        {
+        while (rentalIterator.hasNext()) {
             double thisAmount = 0;
             Rental each = rentalIterator.next();
 
@@ -72,13 +69,13 @@ public class Customer {
             }
 
             //show figures for this rental
-            result += "\t" + each.getMovie().getTitle() + "\t" +String.valueOf(thisAmount) + "\n";
+            result += "\t" + each.getMovie().getTitle() + "\t" + String.valueOf(thisAmount) + "\n";
             totalAmount += thisAmount;
         }
 
         //add footer lines
         result += "Amount owned is " + String.valueOf(totalAmount) + "\n";
-        result += "You earned " + String.valueOf(frequentRenterPoints) +" frequent renter points";
+        result += "You earned " + String.valueOf(frequentRenterPoints) + " frequent renter points";
 
         return result;
     }
