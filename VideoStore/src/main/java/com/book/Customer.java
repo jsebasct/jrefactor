@@ -5,6 +5,8 @@
 package com.book;
 
 import java.util.ArrayList;
+import java.util.Enumeration;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -34,10 +36,13 @@ public class Customer {
         double totalAmount = 0;
         int frequentRenterPoints = 0;
 
+        Iterator<Rental> rentalIterator = rentals.iterator();
+
         String result = "Rental Record for " + getName() + "\n";
-        for (Rental each : rentals)
+        while (rentalIterator.hasNext())
         {
             double thisAmount = 0;
+            Rental each = rentalIterator.next();
 
             //determine amounts for each line
             switch (each.getMovie().getPriceCode()) {
@@ -57,8 +62,10 @@ public class Customer {
                     }
                     break;
             }
+
             // add frequent renter points
             frequentRenterPoints++;
+
             // add bonus for a two day new release rental
             if ((each.getMovie().getPriceCode() == Movie.NEW_RELEASE)
                     && each.getDaysRented() > 1) {

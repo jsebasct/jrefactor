@@ -6,7 +6,6 @@ package com.book;
 
 /**
  *
- * @author jscruz
  */
 public class Movie {
 

@@ -5,8 +5,6 @@
 package com.book;
 
 /**
- *
- * @author jscruz
  */
 public class Rental {
     private int daysRented;
