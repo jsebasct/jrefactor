@@ -1,22 +1,14 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.book;
+
+import org.junit.jupiter.api.*;
 
 import java.util.ArrayList;
 import java.util.List;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
-import static org.junit.Assert.*;
 
-/**
- *
- * @author jscruz
- */
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+
 public class CustomerTest {
 
     private List<Movie> movies;
@@ -37,17 +29,17 @@ public class CustomerTest {
         movies = new ArrayList<Movie>();
     }
 
-    @BeforeClass
+    @BeforeAll
     public static void setUpClass() throws Exception {
         System.out.println("SetUp Class");
     }
 
-    @AfterClass
+    @AfterAll
     public static void tearDownClass() throws Exception {
         System.out.println("TearDown Class");
     }
 
-    @Before
+    @BeforeEach
     public void setUp() {
         System.out.println("setUp");
 
@@ -81,7 +73,7 @@ public class CustomerTest {
         customerPedroRelease.addRental(new Rental(movies.get(4), 3));
     }
 
-    @After
+    @AfterEach
     public void tearDown() {
         System.out.println("tearDown");
     }
@@ -96,9 +88,6 @@ public class CustomerTest {
 
         String result = customerCarlaRegular.statement();
 
-        //System.out.println("Sese:" +result);
-        //System.out.println("SeseExpected:" + expResult);
-
         assertEquals(expResult, result);
     }
 
@@ -112,9 +101,6 @@ public class CustomerTest {
 
         String result = customerAnaRegular.statement();
 
-        //System.out.println("Sese:" +result);
-        //System.out.println("SeseExpected:" + expResult);
-
         assertEquals(expResult, result);
     }
 
@@ -126,9 +112,6 @@ public class CustomerTest {
                 + "\n" + EARNED + 1 + FRP;
 
         String result = customerJoseChildren.statement();
-
-        //System.out.println("Sese:" +result);
-        //System.out.println("SeseExpected:" + expResult);
 
         assertEquals(expResult, result);
     }
@@ -142,9 +125,6 @@ public class CustomerTest {
 
         String result = customerMarioChildren.statement();
 
-        //System.out.println("Sese:" +result);
-        //System.out.println("SeseExpected:" + expResult);
-
         assertEquals(expResult, result);
     }
 
@@ -157,9 +137,6 @@ public class CustomerTest {
                 + "\n" + EARNED + 3 + FRP;
 
         String result = customerPedroRelease.statement();
-
-        //System.out.println("Sese:" +result);
-        //System.out.println("SeseExpected:" + expResult);
 
         assertEquals(expResult, result);
     }
